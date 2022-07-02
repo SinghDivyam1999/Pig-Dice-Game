@@ -1,0 +1,67 @@
+package com.assignment.test;
+
+import java.util.*;
+
+public class PigGame {
+	public static int turn = 1;
+	public static int totalScore;
+	public static int turnScore = 0;
+	public static String current;
+
+	public static int rollDice() {
+		int n = (int) (Math.random() * ((6 - 1) + 1) + 1);
+		return n;
+	}
+
+	public static String choose() {
+		Scanner sc = new Scanner(System.in);
+		String choosed = sc.next();
+		return choosed;
+
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Let's Play PIG!\r\n" + "\r\n" + "* See how many turns it takes you to get to 20.\r\n"
+				+ "* Turn ends when you hold or roll a 1.\r\n"
+				+ "* If you roll a 1, you lose all points for the turn.\r\n"
+				+ "* If you hold, you save all points for the turn.");
+
+		while (totalScore < 20) {
+
+			// for turn first
+
+			System.out.println("TURN " + turn + ":");
+			System.out.println("Welcome to the game of Pig!");
+
+			System.out.println("Enter 'r' to roll again, 'h' to hold.");
+
+			if (choose().equals("r")) {
+				turnScore = rollDice();
+				System.out.println("You rolled: " + turnScore);
+
+				if (turnScore == 1) {
+					System.out.println("Turn over. no Score");
+					totalScore = 0;
+					turn++;
+					// when it is other than 1
+				} else {
+					System.out.println("If you hold , you will have " + totalScore + " points");
+					totalScore += turnScore;
+					System.out.println("Your turn score " + totalScore + " total score is 0");
+
+				}
+				// when user chooses h
+			} else {
+				System.out.println("Your turn score is " + totalScore + " and total score is " + totalScore);
+
+				totalScore += turnScore;
+
+				turn++;
+			}
+
+		}
+		System.out.println("You Win! You finishes in " + turn + " turns!");
+
+	}
+
+}
