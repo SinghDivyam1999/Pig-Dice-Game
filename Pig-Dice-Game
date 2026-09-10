@@ -51,7 +51,7 @@ public class PigGame {
 
 				}
 				// when user chooses h
-			} else {
+			} else 
 				System.out.println("Your turn score is " + totalScore + " and total score is " + totalScore);
 
 				totalScore += turnScore;
