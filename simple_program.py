@@ -13,7 +13,7 @@ def main():
     print(f"The square root of {number} is {sqrt_value}")
 
     # Demonstrate random module
-    random_numbers = [random.randint(1, 100) for _ in range(5)]
+    random_numbers = [random.randin(1, 100) for _ in range(5)]
     print(f"Here are 5 random numbers between 1 and 100: {random_numbers}")
 
     # Do a small calculation
