@@ -13,7 +13,7 @@ public class PigGame {
 		return n;
 	}
 
-	public static String choose() {
+	public static String choose() 
 		Scanner sc = new Scanner(System.in);
 		String choosed = sc.next();
 		return choosed;
